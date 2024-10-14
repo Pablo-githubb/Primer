@@ -62,14 +62,12 @@ class RepetitivaIII{
         }
 
 }
-class beatels{
+class beatels {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
 
         int linia1 = ent.nextInt();
         int linia2 = ent.nextInt();
         int linie3 = ent.nextInt();
-
-        int i=0;
-        do {
-            for(i)
+    }
+}

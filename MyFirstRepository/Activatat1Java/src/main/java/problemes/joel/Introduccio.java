@@ -57,3 +57,37 @@ class triangles {
 
     }
 }
+
+class beatles {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int files = ent.nextInt();
+        int columna = ent.nextInt();
+        int filaInici = ent.nextInt();
+
+
+        for (int i = 0; i < files; i++) {
+            if ((i + filaInici) % 2 == 0) {
+                for (int j = 0; j < columna; j++) {
+                    System.out.print("1 ");
+                }
+            } else {
+                for (int j = 0; j < columna; j++) {
+                    System.out.print("0 ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+class boomer {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+        int anys = ent.nextInt();
+
+        if (anys >= 1945 && anys <= 1965) System.out.println("ok boomer");
+        else System.out.println("nah");
+    }
+}

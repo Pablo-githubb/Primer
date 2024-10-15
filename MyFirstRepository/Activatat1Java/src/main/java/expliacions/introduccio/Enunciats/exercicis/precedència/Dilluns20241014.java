@@ -62,6 +62,7 @@ class RepetitivaIII{
         }
 
 }
+
 class beatels {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
@@ -70,4 +71,62 @@ class beatels {
         int linia2 = ent.nextInt();
         int linie3 = ent.nextInt();
     }
+}
+
+class ascensor {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int petit = ent.nextInt();
+        int gran = ent.nextInt();
+        int ini = ent.nextInt();
+        ent.nextLine();
+
+        int qMovs = 0;
+        int qPis = 0;
+        int fi = ini; //per si no hi han moviments preparem el final
+        boolean incorrectes = false;
+        //bucle per llegir els valors restants
+        do {
+            //llegir utilitzant un nextLine per que pot ser numeric o text
+            String pisText = ent.nextLine();
+            if (pisText.equalsIgnoreCase("x")) break; //sortim del bucle per la X
+            else { //hem entrat al bucle perque pis es un numero
+                int pis = Integer.valueOf(pisText);
+
+                //fem calculs en el pis rebut
+                if (pis < petit || pis > gran) {
+                    incorrectes = true;
+                } else {
+                    //Comprovem si canviem de pis
+                    if (pis != fi) {
+                        qMovs++; //Incrementem el numero de moviments
+                        //Anem a calcular els pisis que ens desplaçem
+                        if (pis > fi) qPis += pis - fi;
+                        else qPis += fi - pis;
+
+                        //Actualizem el pis on anem
+                        fi = pis;
+                    }
+                }
+            }
+        } while (true);
+        System.out.println(qMovs + " " + qPis + " " + fi + " "+(incorrectes ? "E" : " "));
+    }
+}
+
+class cdivisors{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int num = ent.nextInt();
+        int divisors = 0;
+
+        do {
+            for (int i = 0; i <= num; i++) {
+                if (num % 1 == 0) divisors++;
+            }
+        }while(num!=num);
+        System.out.println(" "+divisors+ " ");
+        }
 }

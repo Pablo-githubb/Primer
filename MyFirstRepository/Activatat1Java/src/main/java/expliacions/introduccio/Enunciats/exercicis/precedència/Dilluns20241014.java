@@ -115,18 +115,17 @@ class ascensor {
     }
 }
 
-class cdivisors{
+class divisors {
     public static void main(String[] args) {
-        Scanner ent = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int num = ent.nextInt();
-        int divisors = 0;
+        int casos = scanner.nextInt();
 
-        do {
-            for (int i = 0; i <= num; i++) {
-                if (num % 1 == 0) divisors++;
+        for (int i = 0; i < casos; i++) {
+            int n = scanner.nextInt();
+            for (int j = 1; j <= n; j++) {
+                if (n % j == 0) System.out.print(j + " ");
             }
-        }while(num!=num);
-        System.out.println(" "+divisors+ " ");
-        }
+        } System.out.println();
+    }
 }

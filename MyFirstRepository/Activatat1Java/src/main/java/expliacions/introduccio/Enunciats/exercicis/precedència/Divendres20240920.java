@@ -1,6 +1,4 @@
-package expliacions.introduccio;
-
-import com.sun.source.doctree.SystemPropertyTree;
+package expliacions.introduccio.Enunciats.exercicis.precedència;
 
 import java.util.Scanner;
 

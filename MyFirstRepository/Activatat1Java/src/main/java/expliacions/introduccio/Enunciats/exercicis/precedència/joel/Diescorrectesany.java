@@ -1,4 +1,4 @@
-package problemes.joel;
+package expliacions.introduccio.Enunciats.exercicis.precedència.joel;
 
 import  java.util.Scanner;
 

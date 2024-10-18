@@ -1,4 +1,4 @@
-package problemes.joel;
+package expliacions.introduccio.Enunciats.exercicis.precedència.joel;
 import javax.xml.transform.Source;
 import java.util.Scanner;
 import java.util.SortedMap;

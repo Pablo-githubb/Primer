@@ -126,6 +126,6 @@ class divisors {
             for (int j = 1; j <= n; j++) {
                 if (n % j == 0) System.out.print(j + " ");
             }
-        } System.out.println();
+        } System.out.println("");
     }
 }

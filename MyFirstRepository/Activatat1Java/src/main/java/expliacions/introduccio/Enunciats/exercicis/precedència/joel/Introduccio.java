@@ -1,4 +1,4 @@
-package problemes.joel;
+package expliacions.introduccio.Enunciats.exercicis.precedència.joel;
 import java.util.Scanner;
 
 public class Introduccio {
@@ -89,5 +89,18 @@ class boomer {
 
         if (anys >= 1945 && anys <= 1965) System.out.println("ok boomer");
         else System.out.println("nah");
+    }
+}
+
+class cercatrios{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int c1 = ent.nextInt();
+        int c2 = ent.nextInt();
+        int c3 = ent.nextInt();
+
+        if (c1 == c2 && c2 == c3 && c3 == c1) System.out.println("SI");
+        else System.out.println("NO");
     }
 }

@@ -1,4 +1,4 @@
-package problemes.joel;
+package expliacions.introduccio.Enunciats.exercicis.precedència.joel;
 
 public class Problema89789798 {
     public static void main(String[] args) {

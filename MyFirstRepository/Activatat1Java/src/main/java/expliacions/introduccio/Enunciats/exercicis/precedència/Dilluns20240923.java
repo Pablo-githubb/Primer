@@ -1,4 +1,4 @@
-package expliacions.introduccio;
+package expliacions.introduccio.Enunciats.exercicis.precedència;
 
 public class Dilluns20240923 {
     public static void main(String[] args) {

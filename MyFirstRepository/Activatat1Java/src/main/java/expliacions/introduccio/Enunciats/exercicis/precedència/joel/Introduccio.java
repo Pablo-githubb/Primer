@@ -141,3 +141,63 @@ class lalafel {
         }
     }
 }
+
+class Quadrat {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Leer la entrada (número real que representa el lado del cuadrado)
+        double costat = scanner.nextDouble();
+
+        // Calcular l'àrea
+        double area = costat * costat;
+
+        // Imprimir l'àrea amb 15 posicions, omplint amb 0s a l'esquerra i 3 decimals
+        System.out.format("%015.3f%n", area);
+    }
+}
+
+
+class Una {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        int n = scanner.nextInt();
+
+        if (n < 0 || n >= 1000) {
+            System.out.println("El número debe ser mayor o igual que 0 y menor que 1000.");
+            return;
+        }
+
+        scanner.nextLine();  // Consumir el salto de línea después del entero
+
+        // Leer n líneas de texto
+        String[] lineas = new String[n];
+        for (int i = 0; i < n; i++) {
+            lineas[i] = scanner.nextLine(); // Leer la línea de texto
+        }
+
+        // Aplicar la normativa y imprimir el resultado
+        for (int i = 0; i < n; i++) {
+            StringBuilder resultado = new StringBuilder();
+            boolean mayuscula = false; // Indica si la siguiente letra debe ser mayúscula
+
+            for (char c : lineas[i].toCharArray()) {
+                // Solo alternamos letras alfabéticas
+                if (Character.isLetter(c)) {
+                    if (mayuscula) {
+                        resultado.append(Character.toUpperCase(c));
+                    } else {
+                        resultado.append(Character.toLowerCase(c));
+                    }
+                    mayuscula = !mayuscula; // Alternar
+                } else {
+                    resultado.append(c); // Agregar el carácter tal como está (espacios, puntuación, etc.)
+                }
+            }
+            // Imprimir la línea transformada
+            System.out.println(resultado.toString());
+        }
+    }
+}

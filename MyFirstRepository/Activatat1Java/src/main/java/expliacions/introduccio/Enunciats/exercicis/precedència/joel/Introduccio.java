@@ -104,3 +104,40 @@ class cercatrios{
         else System.out.println("NO");
     }
 }
+
+class lalafel {
+    public static void main(String[] args) {
+
+        Scanner ent = new Scanner(System.in);
+        int numCasos = ent.nextInt();
+
+        while (numCasos > 0) {
+            //tractament de cada cas
+
+            String[] paraules = ent.skip("[\r\n]*").nextLine().split(", ");
+            int necessaris = ent.nextInt();
+
+            int comptLalafel = 0;
+            int telPlenes = 0;
+
+            for (int i = 0; i < paraules.length; i++) {
+                switch (paraules[i].toLowerCase()) {
+                    case "lalafel":
+                        comptLalafel++;
+                        break;
+                    case "telaranya":
+                        if (necessaris > 0 && comptLalafel >= necessaris) {
+                            telPlenes++;
+                            comptLalafel -= necessaris;
+                        }
+                        break;
+                    case "aranya":
+                        comptLalafel = 0;
+                        telPlenes = 0;
+                        break;
+                }
+            }
+            System.out.format("Hay %d telaranyas llenas.%n", telPlenes);
+        }
+    }
+}

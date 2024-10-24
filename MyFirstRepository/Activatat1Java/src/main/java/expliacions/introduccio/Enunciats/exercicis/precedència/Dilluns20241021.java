@@ -126,3 +126,17 @@ class Serp {
         }
     }
 }
+
+class operacioboolea {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        long a = ent.nextInt();
+        long b = ent.nextInt();
+
+        if (a < b) System.out.println("<");
+        else if (a > b) System.out.println(">");
+        else System.out.println("=");
+    }
+
+}

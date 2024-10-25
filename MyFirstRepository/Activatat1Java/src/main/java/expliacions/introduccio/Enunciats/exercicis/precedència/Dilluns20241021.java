@@ -71,11 +71,13 @@ class Problemesjoel_bombo {
         Scanner ent = new Scanner(System.in);
         int numalum = ent.nextInt();
         int numbomb = ent.nextInt();
-        if (numbomb == numalum || numbomb == 0 && numalum == 0) {
+        if (numbomb == numalum) {
             System.out.println("OK");
         } else if (numbomb < numalum) {
             int faltants =  numalum - numbomb;
             System.out.println("KO: " + faltants);
+        } else if (numbomb == 0 && numalum == 0) {
+            System.out.println("0 0");
         } else {
             int sobrants = numbomb - numalum;
             System.out.println("OK: " + sobrants);

@@ -65,3 +65,18 @@ class Cadenessensesplif {
         } while (true);
     }
 }
+
+class binaris {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+        int casos = ent.nextInt();
+
+        for (int i = 0; i < casos; i++) {
+            String[] str = ent.skip("[\r\n]*").nextLine().split("");
+            int num1 = Integer.valueOf(str[0]);
+            int num2 = Integer.valueOf(str[2]);
+            int bin = 0;
+
+        }
+    }
+}

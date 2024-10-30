@@ -7,38 +7,43 @@ public class BloodborneStrings {
         Scanner ent = new Scanner(System.in);
         int numCasos = ent.nextInt();
 
-
         while (numCasos-- > 0) {
-            for (int i = 0; i < numCasos; i++) {
-                String paraula = ent.skip("[\n\r]*").nextLine().toLowerCase();
-                boolean trobat = false;
+            String paraula = ent.skip("[\r\n]*").nextLine().toLowerCase();
+            boolean trobat = false;
 
-                for (int j = 0; j + 1 < paraula.length(); j++) {
-                    if (paraula.charAt(i) == paraula.charAt(j + 1)) trobat = true;
-                    break;
-                }
-                if (trobat == true )System.out.println("SI");
-                else System.out.println("NO");
+            for (int i = 0; !trobat && i + 1 < paraula.length(); i++) {
+                if (paraula.charAt(i) == paraula.charAt(i + 1)) trobat = true;
             }
+            System.out.println(trobat ? "SI" : "NO");
         }
     }
 }
 
-class bloodbornearray{
+
+class BloodborneArray {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
+
         int numCasos = ent.nextInt();
 
-        while (numCasos-- > 0) {
+        while (numCasos-- > 0)
             for (int i = 0; i < numCasos; i++) {
-                int length=0;
+                int length = ent.nextInt();
                 int[] vector = new int[length];
-                int numeros = ent.nextInt();
+                boolean igual = false;
 
-                for (int j = 0; j < length ; j++) {
-
+                for (int j = 0; j < length; j++) {
+                    vector[j] = ent.nextInt();
                 }
+                for (int j = 0; j < length - 1; j++) {
+                    if (vector[j] == vector[j + 1]) {
+                        igual = true;
+                        break;
+                    }
+                }
+                System.out.println(igual ? "SI" : "NO");
             }
-        }
     }
 }
+
+

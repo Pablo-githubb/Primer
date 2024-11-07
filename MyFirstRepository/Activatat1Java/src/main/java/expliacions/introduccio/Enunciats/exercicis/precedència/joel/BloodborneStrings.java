@@ -26,24 +26,47 @@ class BloodborneArray {
 
         int numCasos = ent.nextInt();
 
-        while (numCasos-- > 0)
-            for (int i = 0; i < numCasos; i++) {
-                int length = ent.nextInt();
-                int[] vector = new int[length];
-                boolean igual = false;
+        while (numCasos-- > 0) {
+            int length = ent.nextInt();
+            int[] vector = new int[length]; //declarem un vector de *length* --> No te sentit ferho abans perque no hi habia la variable int length
+            boolean igual = false;
 
-                for (int j = 0; j < length; j++) {
-                    vector[j] = ent.nextInt();
-                }
-                for (int j = 0; j < length - 1; j++) {
-                    if (vector[j] == vector[j + 1]) {
-                        igual = true;
-                        break;
-                    }
-                }
-                System.out.println(igual ? "SI" : "NO");
+            for (int i = 0; i < length; i++) {
+                vector[i] = ent.nextInt();
             }
+            for (int i = 0; i < length - 1; i++) {
+                if (vector[i] == vector[i + 1]) {
+                    igual = true;
+                    break;
+                }
+            }
+            System.out.println(igual ? "SI" : "NO");
+        }
     }
 }
 
+class bloodborne2 {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
 
+        int numCasos = ent.nextInt();
+
+        while (numCasos-- > 0) {
+            int caselles = ent.nextInt();
+            int[] vector = new int[caselles]; //declarem un vector de *length* --> No te sentit ferho abans perque no hi habia la variable int length
+            boolean igual = false;
+
+            if (caselles <= 1) {
+                int anterior = ent.nextInt();
+
+                while (--caselles > 0) {
+                    int actual= ent.nextInt();
+                   if (anterior==actual) igual=true;
+                        anterior=actual;
+                        //hem comparat els dos elements llavors actualizem el valor de l'anterior
+                    System.out.println(igual ? "SI" : "NO");
+                }
+            }
+        }
+    }
+}

@@ -30,11 +30,11 @@ class escriurearray1 {
         Scanner ent = new Scanner(System.in);
 
         // Leer el tamaño del array
-        int K = ent.nextInt();
+        int tamany = ent.nextInt();
 
         // Leer los elementos del array
-        int[] array = new int[K];
-        for (int i = 0; i < K; i++) {
+        int[] array = new int[tamany];
+        for (int i = 0; i < array.length; i++) {
             array[i] = ent.nextInt();
         }
 
@@ -43,9 +43,8 @@ class escriurearray1 {
 
         // Imprimir el array completo
         for (int num : array) {
-            System.out.print(num + " ");
+            System.out.println(num + " ");
         }
-        System.out.println();
 
         // Imprimir el elemento en la posición N
         System.out.println(array[N]);
@@ -80,3 +79,4 @@ class arraystrings{
         String str = ent.skip("[\r\n]*").nextLine();
     }
 }
+

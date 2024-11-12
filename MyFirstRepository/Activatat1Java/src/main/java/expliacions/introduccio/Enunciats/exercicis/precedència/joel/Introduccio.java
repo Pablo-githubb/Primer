@@ -1,4 +1,6 @@
 package expliacions.introduccio.Enunciats.exercicis.precedència.joel;
+import javax.swing.*;
+import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Scanner;
 
 public class Introduccio {
@@ -199,5 +201,65 @@ class Una {
             // Imprimir la línea transformada
             System.out.println(resultado.toString());
         }
+    }
+}
+
+class sumarnumerors{
+    public static void main(String[] args) {
+        System.out.println(89789798*72665512);
+    }
+}
+
+
+class felicitatascendent{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+        int f1=ent.nextInt();
+        int f2=ent.nextInt();
+        int f3=ent.nextInt();
+
+
+        if (f1<f2 && f2<f3 && f3>f1) System.out.println("SI");
+        else System.out.println("NO");
+    }
+}
+class problemacpp {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+        int num = ent.nextInt();
+        System.out.println(num + 1);
+
+    }
+}
+
+class muntanyes{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int n1= ent.nextInt();
+        int n2= ent.nextInt();
+        int n3= ent.nextInt();
+        int n4= ent.nextInt();
+        int n5= ent.nextInt();
+
+        if (n2>n1 && n3<n2 && n4>n3 && n5<n4 || n2<n1 && n3>n2 && n4<n3 && n5>n4) System.out.println("SI");
+        else System.out.println("NO");
+    }
+}
+
+class calorcitoc4{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int alumnes = ent.nextInt();
+        int temperatura = ent.nextInt();
+        String comamandament;
+
+        if(alumnes>15 || alumnes<15 && temperatura>25 && comamandament.equals("SI")) System.out.println("Aire");
+        else if(alumnes>15 && temperatura<=25 && temperatura>22 && comamandament.equals("SI")) System.out.println("Aire");
+        else if(alumnes>15 && temperatura<=25 && temperatura>22 && comamandament.equals("NO")) System.out.println("Obrir Finestra");
+        else if(alumnes>15 && temperatura>18 && comamandament.equals("SI") || comamandament.equals("NO")) System.out.println("Obrir Finestra");
+        else if(alumnes==0 && temperatura==0 && comamandament.isBlank()) System.out.println("Res");
+
     }
 }

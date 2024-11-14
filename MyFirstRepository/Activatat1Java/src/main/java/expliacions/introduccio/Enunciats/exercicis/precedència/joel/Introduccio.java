@@ -406,3 +406,13 @@ class horavalida{
         else System.out.printf("NO");
     }
 }
+
+class decada90{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int any = ent.nextInt();
+        if (any % 100 >=90 && any % 100 <=99) System.out.println("SI");
+        else System.out.println("NO");
+    }
+}

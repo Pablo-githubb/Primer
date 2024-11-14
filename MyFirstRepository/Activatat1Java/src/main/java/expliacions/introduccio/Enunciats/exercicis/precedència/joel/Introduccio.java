@@ -290,8 +290,8 @@ class torresbessones{
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
 
-        int torre1= ent.nextInt();
-        int torre2= ent.nextInt();
+        float torre1= ent.nextFloat();
+        float torre2= ent.nextFloat();
 
         if (Math.abs(torre1-torre2)<=5) System.out.println("SI");
         else System.out.println("NO");
@@ -380,5 +380,29 @@ class calorcitoc4{
         } else {
             System.out.println("RES");
         }
+    }
+}
+//02 05 Alternatives + Mòdul + Hores
+class dimensioinversa{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        double num = ent.nextDouble();
+
+        System.out.println(1/num);
+    }
+}
+
+
+class horavalida{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int hores=ent.nextInt();
+        int minuts=ent.nextInt();
+        int segons=ent.nextInt();
+
+        if (hores<=23 && hores>=0 && minuts<=59 && minuts>=0 && segons<=59 && segons>=0) System.out.printf("SI");
+        else System.out.printf("NO");
     }
 }

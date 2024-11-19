@@ -428,3 +428,9 @@ class amanecer{
                         (segons/86400)+1);
     }
 }
+class polvalcinema{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+    }
+}

@@ -116,12 +116,11 @@ class exercici9entrada {
 class exercici9boolean {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
-
         Random r = new Random();
         int num = 0;
         int[] comptador = new int['Z' - 'A' + 1];
-        char[] entrada; //creu un vector que guardara la entrada
-        boolean[] tractats = new boolean['Z' - 'A' + 1];
+        char[] entrada;                         //declaro un vector on guardaré l'entrada. No l'instàncio pk no sé quantes caselles necessitaré
+        boolean[] tractades = new boolean['Z' - 'A' + 1];  //vector per saber si hem tractat una lletra o no
         //Demanem el número positiu a l'usuari
         do {
             System.out.println("Introduix un número enter positiu:");
@@ -129,8 +128,7 @@ class exercici9boolean {
             if (num <= 0) System.out.println("El número ha de ser major que 0!!");
             else break;
         } while (true);
-
-        entrada = new char[num];
+        entrada = new char[num];      //Ara que sé quantes caselles necessityo instancio el vector
 
         //generem les lletres aleatòriament
         for (int i = 0; i < num; i++) {
@@ -141,45 +139,13 @@ class exercici9boolean {
         }
         System.out.println();
 
-        //Mirem quines lletres han sortit i quantes vegades
+        //Mostrem quantes vegades han aparegut les lletres de l'entrada, evitant repeticions
         for (int i = 0; i < entrada.length; i++) {
-            if (!tractats[entrada[i] - 'A'])
+            //Per evitar repeticions mirarem el contingut del vector de lletres tractades
+            if (!tractades[entrada[i] - 'A']) {
                 System.out.format("La lletra %c ha sortit %d vegades.%n", entrada[i], comptador[entrada[i] - 'A']);     //generem  la lletra a partir de  l'index aparegut
-            tractats[entrada[i] - 'A'] = true;
-        }
-    }
-}
-
-class matriunumer {
-    public static void main(String[] args) {
-
-        Random r = new Random();
-
-        int[][] m = new int[5][5];
-        int[][] sumaveins = new int[5][5];
-
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[i].length; j++) {
-                System.out.format("%3d ", m[i][j] = r.nextInt(10));
+                tractades[entrada[i] - 'A'] = true;
             }
-            System.out.println();
-        }
-
-        System.out.println();
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0 ; j < m[i].length; j++) {
-                //tractament de la casella actual
-                int suma = 0;
-                //casella interior
-
-                if (i == 0 || i == m.length-1 || j == 0 || j == m[i].length-1) {
-                    if (i==0) suma = m[i][j - 1]+m[i][j + 1] + m[i + 1][j - 1] + m[i + 1][j] + m[i + 1][j + 1];
-                } else {
-                    suma = m[i - 1][j - 1] + m[i - 1][j] + m[i - 1][j + 1] + m[i][j - 1] + m[i][j + 1] + m[i + 1][j - 1] + m[i + 1][j] + m[i + 1][j + 1];
-                }
-                System.out.format("%3d ", suma);
-            }
-            System.out.println();
         }
     }
 }

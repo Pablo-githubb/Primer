@@ -443,18 +443,19 @@ class sumaunsegon{
         int minuts = ent.nextInt();
         int segons = ent.nextInt();
 
-        if (segons+1 == 60 && segons >=0){
+        segons +=1;
+        if (segons == 60 && segons>= 0){
             minuts+=1;
             segons=0;
+
         }
-        else if (minuts == 60 && minuts >=0){
-            hores+=1;
-            minuts=0;
+        if (minuts == 60 && minuts>= 0) {
+            hores += 1;
+            minuts = 0;
         }
-        else if(hores%24==0) {
-            System.out.println(hores);
-            System.out.println(minuts);
-            System.out.println(segons);
+        if (hores == 24 && hores >= 0) {
+            hores = 0;
         }
+        System.out.format("%d %d %d", hores ,minuts , segons);
     }
 }

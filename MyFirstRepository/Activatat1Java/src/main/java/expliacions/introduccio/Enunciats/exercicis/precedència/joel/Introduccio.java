@@ -434,3 +434,27 @@ class polvalcinema{
 
     }
 }
+
+class sumaunsegon{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int hores = ent.nextInt();
+        int minuts = ent.nextInt();
+        int segons = ent.nextInt();
+
+        if (segons+1 == 60 && segons >=0){
+            minuts+=1;
+            segons=0;
+        }
+        else if (minuts == 60 && minuts >=0){
+            hores+=1;
+            minuts=0;
+        }
+        else if(hores%24==0) {
+            System.out.println(hores);
+            System.out.println(minuts);
+            System.out.println(segons);
+        }
+    }
+}

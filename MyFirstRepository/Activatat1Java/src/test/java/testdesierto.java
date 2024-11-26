@@ -14,6 +14,11 @@ public class desiertoTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
+    @BeforeEach
+    void setUp() {
+        System.setOut(new PrintStream(outContent));
+    }
+
     @Test
     void matrixGenerationShouldCreate5x5MatrixWithRandomValues() {
         int[][] matrix = new int[5][5];
@@ -57,7 +62,7 @@ public class desiertoTest {
         int sum = matrix[0][1] + matrix[1][0] + matrix[1][1];
         assertEquals(15, sum);
     }
-}
+
     @Test
     void shouldReturnCorrectMapNameWithHighestVotes() {
         BattleField[] mapes = new BattleField[3];
@@ -70,4 +75,9 @@ public class desiertoTest {
         mapes[2] = new BattleField();
         mapes[2].nom = "Map3";
         mapes[2].numVots = 7;
+    }
+
+    private String getOutput() {
+        return outContent.toString();
+    }
 }

@@ -2,7 +2,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercici2 {
+class Exercici2 {
 
     public static void main(String[] args) {
 

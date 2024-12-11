@@ -232,12 +232,14 @@ class pedrapapertisora {
         int jugador1 = ent.nextInt();
         int jugador2 = ent.nextInt();
 
-        if ((jugador1 == pedra && jugador2 == paper) || (jugador2 == pedra && jugador1 == tisora) || (jugador1 == paper && jugador2 == tisora))
+        if (jugador1 > 3 && jugador1 < 1 && jugador2 > 3 && jugador2 < 1) System.out.println("ERROR");
+        else if ((jugador1 == pedra && jugador2 == paper) || (jugador2 == pedra && jugador1 == tisora) || (jugador1 == paper && jugador2 == tisora))
             System.out.println("Jugador2");
         else if ((jugador2 == pedra && jugador1 == paper) || (jugador1 == pedra && jugador2 == tisora) || (jugador1 == tisora && jugador2 == paper))
             System.out.println("Jugador1");
         else if (jugador1 == jugador2) System.out.println("EMPAT");
-        else System.out.println("ERROR");
+
+
     }
 }
 
@@ -292,7 +294,6 @@ class puntog {
 }
 
 
-
 class arbolito {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
@@ -326,7 +327,156 @@ class arrodoniment {
         float nota = ent.nextFloat();
         if (nota % 1 >= 0.5) {
             System.out.println(Math.round(nota));
+        } else System.out.println((int) nota);
+    }
+}
+
+class sumarapida {
+    public static void main(String[] args) {
+        System.out.print(89789798.5 * 72665512.5);
+    }
+}
+
+class Canondades {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int metres = ent.nextInt();
+        int preu = 0;
+
+        if (metres <= 25) {
+            preu = metres * 3;
+        } else if (metres <= 75) {
+            preu = 25 * 3 + (metres - 25) * 4;
+        } else {
+            preu = 25 * 3 + 50 * 4 + (metres - 75) * 5;
         }
-        else System.out.println((int)nota);
+
+        System.out.format("%fm: %f euros", (float) metres, (float) preu);
+    }
+}
+
+class dediaames {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int dia = ent.nextInt();
+        int mes = 0;
+
+        if (dia >= 1 && dia <= 31) {
+            mes = 1;
+        } else if (dia >= 32 && dia <= 59) {
+            mes = 2;
+        } else if (dia >= 60 && dia <= 90) {
+            mes = 3;
+        } else if (dia >= 91 && dia <= 120) {
+            mes = 4;
+        } else if (dia >= 121 && dia <= 151) {
+            mes = 5;
+        } else if (dia >= 152 && dia <= 181) {
+            mes = 6;
+        } else if (dia >= 182 && dia <= 212) {
+            mes = 7;
+        } else if (dia >= 213 && dia <= 243) {
+            mes = 8;
+        } else if (dia >= 244 && dia <= 273) {
+            mes = 9;
+        } else if (dia >= 274 && dia <= 304) {
+            mes = 10;
+        } else if (dia >= 305 && dia <= 334) {
+            mes = 11;
+        } else if (dia >= 335 && dia <= 365) {
+            mes = 12;
+        }
+
+        System.out.println(mes);
+    }
+}
+
+
+class diadelasetmana2 {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int num = ent.nextInt();
+        String dia = "";
+
+        switch (num % 7) {
+            case 1:
+                dia = "Monday";
+                break;
+            case 2:
+                dia = "Tuesday";
+                break;
+            case 3:
+                dia = "Wednesday";
+                break;
+            case 4:
+                dia = "Thursday";
+                break;
+            case 5:
+                dia = "Friday";
+                break;
+            case 6:
+                dia = "Saturday";
+                break;
+            case 0:
+                dia = "Sunday";
+                break;
+        }
+
+        System.out.println(dia);
+    }
+}
+
+
+class avimesgran {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        String avi1 = ent.skip("[\r\n]*").nextLine();
+        int edat1 = ent.nextInt();
+        String avi2 = ent.skip("[\r\n]*").nextLine();
+        int edat2 = ent.nextInt();
+
+        if (edat1 > edat2) System.out.println(avi1);
+        else if (edat2 > edat1) System.out.println(avi2);
+        else System.out.println("Tenen la mateixa edat");
+
+    }
+}
+
+class dosporuno {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int num1 = ent.nextInt();
+        int num2 = ent.nextInt();
+
+        if (num1 * 2 / num2 == 0 || num2 * 2 / num1 == 0) System.out.println("SI");
+        else System.out.println("NO");
+    }
+}
+
+class elnenmésalt {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int alturamax = ent.nextInt();
+        int nen1 = ent.nextInt();
+        int nen2 = ent.nextInt();
+        int nen3 = ent.nextInt();
+        int posicio = 0;
+
+        if (nen1 <= alturamax && nen1 > nen2 && nen1 > nen3) {
+            posicio = 1;
+            System.out.println("Nen " + posicio);
+        } else if (nen2 <= alturamax && nen2 > nen1 && nen2 > nen3) {
+            posicio = 2;
+            System.out.println("Nen " + posicio);
+        } else if (nen3 <= alturamax && nen3 > nen1 & nen3 > nen2) {
+            posicio = 3;
+            System.out.println("Nen " + posicio);
+        } else System.out.println("No hi ha cap nen");
     }
 }

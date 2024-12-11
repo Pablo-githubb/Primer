@@ -221,6 +221,39 @@ class BARRETSWITCH {
         }
     }
 }
+class diadelasetmana {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+        int num = ent.nextInt();
+        String dia = "";
+
+        switch (num % 7) {
+            case 1:
+                dia = "Monday";
+                break;
+            case 2:
+                dia = "Tuesday";
+                break;
+            case 3:
+                dia = "Wednesday";
+                break;
+            case 4:
+                dia = "Thursday";
+                break;
+            case 5:
+                dia = "Friday";
+                break;
+            case 6:
+                dia = "Saturday";
+                break;
+            case 0:
+                dia = "Sunday";
+                break;
+        }
+
+        System.out.println(dia);
+    }
+}
 
 
 /// RANDOMS
@@ -504,7 +537,7 @@ class Exercici16Matrius {
                 matriu[i][j] = r.nextInt(101);        //generem números aleatoris de 0 a 100
                 sumaFiles[i] += matriu[i][j];               //sumem la casella actual a la fila i
                 sumaColumnes[j] += matriu[i][j];            //sumem la casella actual a la columna j
-                System.out.format("%4d", matriu[i][j]);
+                System.out.format("%3d", matriu[i][j]);
             }
             System.out.println();
         }

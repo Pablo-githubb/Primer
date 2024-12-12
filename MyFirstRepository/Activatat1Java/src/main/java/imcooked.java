@@ -480,3 +480,19 @@ class elnenmésalt {
         } else System.out.println("No hi ha cap nen");
     }
 }
+
+
+class etsjove2{
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int edat = ent.nextInt();
+        int comptador = 1;
+
+        for (int i = 0; i < 4 ; i++) {
+            if (edat<=30) comptador++;
+            edat = ent.nextInt();
+        }
+        System.out.println(comptador);
+    }
+}

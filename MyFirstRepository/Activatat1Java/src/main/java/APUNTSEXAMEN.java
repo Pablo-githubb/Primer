@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.List;
 /// MATRIUS
 public class APUNTSEXAMEN {
     public static void main(String[] args) {
@@ -172,7 +173,33 @@ class escriurearray4 {
     }
 }
 
+class escriurearray2Strings {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
 
+        // Leer el tamaño del array
+        int tamany = ent.nextInt();
+        String paraules = "";
+
+        // Leer los elementos del array
+        String[] array = new String[tamany];
+        for (int i = 0; i < array.length; i++) {
+            paraules = ent.skip("[\r\n]*").nextLine();
+            array[i] = paraules;
+        }
+
+        // Leer la posición a acceder
+        int N = ent.nextInt();
+
+        // Imprimir el array completo
+        for (String paraula : array) {
+            System.out.println(paraula);
+        }
+
+        // Imprimir el elemento en la posición N más la frase
+        System.out.println(array[N]);
+    }
+}
 class arraystrings {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
@@ -181,6 +208,30 @@ class arraystrings {
         int[] vector = new int[tamany];
 
         String str = ent.skip("[\r\n]*").nextLine();
+    }
+}
+
+
+class Llistes {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        // Leer la primera línea y almacenar los números en una lista
+        List<Integer> llista = new ArrayList<>();
+        while (true) {
+            int num = ent.nextInt();
+            if (num == -1) break;
+            llista.add(num);
+        }
+
+        // Leer la posición N
+        int N = ent.nextInt();
+
+        // Imprimir la lista completa
+        System.out.println(llista);
+
+        // Imprimir el elemento en la posición N
+        System.out.println(llista.get(N));
     }
 }
 

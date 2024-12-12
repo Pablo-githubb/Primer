@@ -195,8 +195,12 @@ class ambrosio {
 
         while (numCasos-- > 0) {
             int pisos = ent.nextInt();
+            int totalBombons = 0;
 
-
+            for (int j = 1; j <= pisos; j++) {
+                totalBombons += j * j;
+            }
+            System.out.println(totalBombons);
         }
     }
 }
@@ -482,17 +486,45 @@ class elnenmésalt {
 }
 
 
-class etsjove2{
+class etsjove2 {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
 
         int edat = ent.nextInt();
         int comptador = 1;
 
-        for (int i = 0; i < 4 ; i++) {
-            if (edat<=30) comptador++;
+        for (int i = 0; i < 4; i++) {
+            if (edat <= 30) comptador++;
             edat = ent.nextInt();
         }
         System.out.println(comptador);
+    }
+}
+
+class escriurearray2 {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        // Leer el tamaño del array
+        int tamany = ent.nextInt();
+        String paraules = "";
+
+        // Leer los elementos del array
+        String[] array = new String[tamany];
+        for (int i = 0; i < array.length; i++) {
+            paraules = ent.skip("[\r\n]*").nextLine();
+            array[i] = paraules;
+        }
+
+        // Leer la posición a acceder
+        int N = ent.nextInt();
+
+        // Imprimir el array completo
+        for (String paraula : array) {
+            System.out.println(paraula);
+        }
+
+        // Imprimir el elemento en la posición N más la frase
+        System.out.println(array[N]);
     }
 }

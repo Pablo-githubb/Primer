@@ -232,18 +232,18 @@ class pedrapapertisora {
         int paper = 2;
         int tisora = 3;
 
-
         int jugador1 = ent.nextInt();
         int jugador2 = ent.nextInt();
 
-        if (jugador1 > 3 && jugador1 < 1 && jugador2 > 3 && jugador2 < 1) System.out.println("ERROR");
-        else if ((jugador1 == pedra && jugador2 == paper) || (jugador2 == pedra && jugador1 == tisora) || (jugador1 == paper && jugador2 == tisora))
-            System.out.println("Jugador2");
-        else if ((jugador2 == pedra && jugador1 == paper) || (jugador1 == pedra && jugador2 == tisora) || (jugador1 == tisora && jugador2 == paper))
+        if (jugador1 < 1 || jugador1 > 3 || jugador2 < 1 || jugador2 > 3) {
+            System.out.println("ERROR");
+        } else if (jugador1 == jugador2) {
+            System.out.println("EMPAT");
+        } else if ((jugador1 == pedra && jugador2 == tisora) || (jugador1 == paper && jugador2 == pedra) || (jugador1 == tisora && jugador2 == paper)) {
             System.out.println("Jugador1");
-        else if (jugador1 == jugador2) System.out.println("EMPAT");
-
-
+        } else {
+            System.out.println("Jugador2");
+        }
     }
 }
 
@@ -257,11 +257,11 @@ class Polvaalcinema {
         int hora = ent.nextInt();
         int minuts = ent.nextInt();
 
-        // Calculate the total minutes from the start of the movie to Pol's arrival
         int totalMinutsArribada = hora * 60 + minuts;
 
-        // Compare the arrival time with the margin
-        if (totalMinutsArribada <= marge) {
+        int minutsPassats = totalMinutsArribada % duracio;
+
+        if (minutsPassats <= marge) {
             System.out.println("VEURE");
         } else {
             System.out.println("MARXAR");
@@ -457,7 +457,7 @@ class dosporuno {
         int num1 = ent.nextInt();
         int num2 = ent.nextInt();
 
-        if (num1 * 2 / num2 == 0 || num2 * 2 / num1 == 0) System.out.println("SI");
+        if (num1 * 2 % num2 == 0 || num2 * 2 % num1 == 0) System.out.println("SI");
         else System.out.println("NO");
     }
 }
@@ -526,5 +526,24 @@ class escriurearray2 {
 
         // Imprimir el elemento en la posición N más la frase
         System.out.println(array[N]);
+    }
+}
+
+class minutahora {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        int minuts = ent.nextInt();
+
+
+        int hores = minuts / 60;
+        int mins = minuts % 60;
+
+
+        if (mins < 10) {
+            System.out.format("%d:%d%n", hores, mins);
+        } else {
+            System.out.format("%d:%d%n", hores, mins);
+        }
     }
 }

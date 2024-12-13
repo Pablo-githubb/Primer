@@ -573,7 +573,30 @@ class ComptarLletres {
 
 }
 
+class pedrapapertisores {
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+//1 pedra
+//2 paper
+//3 tisora
+        int pedra = 1;
+        int paper = 2;
+        int tisora = 3;
 
+        int jugador1 = ent.nextInt();
+        int jugador2 = ent.nextInt();
+
+        if (jugador1 < 1 || jugador1 > 3 || jugador2 < 1 || jugador2 > 3) {
+            System.out.println("ERROR");
+        } else if (jugador1 == jugador2) {
+            System.out.println("EMPAT");
+        } else if ((jugador1 == pedra && jugador2 == tisora) || (jugador1 == paper && jugador2 == pedra) || (jugador1 == tisora && jugador2 == paper)) {
+            System.out.println("Jugador1");
+        } else {
+            System.out.println("Jugador2");
+        }
+    }
+}
 /// MATRIUS HARD
 class Exercici16Matrius {
 

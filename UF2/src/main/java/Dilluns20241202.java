@@ -1,8 +1,8 @@
-import java.util.Scanner;
 import java.util.Random;
-
+import java.util.Scanner;
 
 public class Dilluns20241202 {
+
     //Ha de mostrar un missatge Hello World i assignar un valor aleatori a una variable
     public static void main(String[] args) {
 //        //Declaració de variables del main
@@ -25,58 +25,58 @@ public class Dilluns20241202 {
 //        System.out.format("El número aleatori generat és el %d%n", variable);
 //
         //Anem a generar números aleatoris
-        int limit = 7;
-        int[] resultat = generateRandomNumbers(25, limit);
-        if (resultat != null)
+        int limit=7;
+        int[] resultat=generateRandomNumbers(25, limit);
+        if(resultat!=null)
             for (int i = 0; i < resultat.length; i++) {
                 System.out.println(resultat[i]);
             }
-        else System.out.println("No s'han pogut generar els números ja que el límit val " + limit);
+        else System.out.println("No s'han pogut generar els números ja que el límit val "+limit);
 
     }
 
     //Anem a crear un nou mètode
-    public static void metodeDibuixar() {
+    public static void metodeDibuixar(){
         //Codi del mètode
         System.out.println("Hello world inside a method!");
     }
 
     //Mètode que retorna qualsevol número enter correcte
-    public static int generaNumeroAleatori() {
-        Random r = new Random();
+    public static int generaNumeroAleatori(){
+        Random r=new Random();
         return r.nextInt();
     }
 
     //Mètode que retorna un número enter entre 0 i el paràmetre menys 1 si és paràmetre és coorecte i sinó retorna -1
-    public static int generaNumeroAleatori(int limit) {
-        if (limit < 0) return -1;
-        Random r = new Random();
+    public static int generaNumeroAleatori(int limit){
+        if(limit<0) return -1;
+        Random r=new Random();
         int valor;
         return r.nextInt(limit);
     }
 
     //Mètode que retorna 3 números enters aleatoris
-    public static int[] generateRandomNumbers(int bound) {
-        Random r = new Random();
-        int[] valor = new int[3];
+    public static int[] generateRandomNumbers(int bound){
+        Random r=new Random();
+        int[] valor=new int[3];
 
         //Generem els 3 números aleatoris
-        valor[0] = r.nextInt(bound);
-        valor[1] = r.nextInt(bound);
-        valor[2] = r.nextInt(bound);
+        valor[0]=r.nextInt(bound);
+        valor[1]=r.nextInt(bound);
+        valor[2]=r.nextInt(bound);
 
         return valor;
     }
 
     public static int[] generateRandomNumbers(int bound, int quantitat) {
 
-        if (quantitat < 0 || bound < 0) return null;
-        Random r = new Random();
-        int[] valor = new int[quantitat];
+        if(quantitat<0 || bound<0) return null;
+        Random r=new Random();
+        int[] valor=new int[quantitat];
 
         //Generem els números aleatoris
         for (int i = 0; i < valor.length; i++) {
-            valor[i] = r.nextInt(bound);
+            valor[i]=r.nextInt(bound);
         }
         return valor;
     }

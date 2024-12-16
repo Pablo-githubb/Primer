@@ -56,10 +56,60 @@ public class exercisis {
             caracterMaxim = temp;
         }
         Random r = new Random();
-        return (char) (r.nextInt(caracterMaxim - caracterMinim+1)+caracterMinim);
+        return (char) (r.nextInt(caracterMaxim - caracterMinim + 1) + caracterMinim);
+    }
+
+}
+
+
+class exe17 {
+    public static int[] tractaParametres(int... params) {
+
+        if (params == null) return null;
+        if (params.length == 0) return null;
+
+        int[] resultat = new int[]{0, params.length, 0, 0};
+        int suma = 0, max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < params.length; i++) {
+            //actualitzem el màxim si cal
+
+            if (params[i] > max) max = params[i];
+            if (params[i] < min) min = params[i];
+
+            //sumem el valor de la casella actual
+
+            suma = params[i];
+        }
+
+        return new int[]{0, params.length, 0, 0};
+    }
+
+    public static void main(String[] args) {
+        tractaParametres();
+
+        tractaParametres(null);
+
+        tractaParametres(new int[]{});
+    }
+
+    class Exe18 {
+
+        public static float[] ompleVectorFloats(float... params) {
+            if (params != null || params.length == 0) return null;
+        }
+
+        public static void main (String[]params){
+            ompleVectorFloats();
+        }
     }
 }
 
 
-    
+
+
+class Exe20{
+
+}
+
 

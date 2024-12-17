@@ -113,47 +113,33 @@ class Exercici18 {
 
 
 class Exe20 {
-    public class StringReplacer {
-
-        public static String reemplassaMultiplesCaracters(String input, char primerCaracter, char segonCaracter, char... caracters) {
-            // Tractament de casos especials
-            if (input == null || input.isEmpty()) {
-                return input;
-            }
-
-            // Construir un conjunt de caràcters a reemplaçar
-            StringBuilder charsToReplace = new StringBuilder();
-            charsToReplace.append(segonCaracter);
-            if (caracters != null) {
-                for (char c : caracters) {
-                    charsToReplace.append(c);
-                }
-            }
-
-            // Construir el resultat reemplaçant els caràcters
-            StringBuilder result = new StringBuilder();
-            for (char c : input.toCharArray()) {
-                if (charsToReplace.indexOf(String.valueOf(c)) >= 0) {
-                    result.append(primerCaracter);
-                } else {
-                    result.append(c);
-                }
-            }
-
-            return result.toString();
+    public static String reemplassaMultiplesCaracters(String text, char primerCaracter, char segonCaracter, char... caracters) {
+        // Tractament de casos especials
+        if (text == null || text.isEmpty()) {
+            return text;
         }
 
-        public static void main(String[] args) {
-            // Exemple d'ús
-            String input = "Hola, món!";
-            char primerCaracter = '*';
-            char segonCaracter = 'o';
-            char[] caracters = {'a', 'm'};
-
-            String resultat = reemplassaMultiplesCaracters(input, primerCaracter, segonCaracter, caracters);
-            System.out.println(resultat); // H*l*, *ón!
+        // Construir un conjunt de caràcters a reemplaçar
+        String resultat = "";
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == segonCaracter) resultat += primerCaracter;
+            else {
+                if (caracters != null) {
+                    int j = 0;
+                    for (; j < caracters.length && caracters[j] != c; j++) {
+                        if (j < caracters.length) resultat += primerCaracter;
+                        else resultat += c;
+                    }
+                } else resultat += c;
+            }
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(reemplassaMultiplesCaracters("Hola",'p','o'));
+        System.out.println(reemplassaMultiplesCaracters("Hola",'p','o', null));
+        System.out.println(reemplassaMultiplesCaracters("Hola",'p','o', new char[]{}));
+        System.out.println(reemplassaMultiplesCaracters("Hola",'p','o', new char[]{'H','l', 'a'}));
+    }
 }
-
-

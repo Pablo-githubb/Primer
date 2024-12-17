@@ -62,30 +62,32 @@ public class exercisis {
 }
 
 
-class exe17 {
-    public static int[] tractaParametres(int... params) {
+class Exercici17 {
 
+    public static int[] tractaParametres(int... params) {
+        //Tractament de casos "especials"
         if (params == null) return null;
         if (params.length == 0) return null;
 
-        int[] resultat = new int[]{0, params.length, 0, 0};
-        int suma = 0, max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
+        //Tractament de vectors en caselles
+        int suma, max, min;
 
-        for (int i = 0; i < params.length; i++) {
-            //actualitzem el màxim si cal
-
+        max = min = suma = params[0];     //tractem la primera casella
+        //Recorrem el vector a partir de la segona casella
+        for (int i = 1; i < params.length; i++) {
+            //Actualitzem el màxim si cal
             if (params[i] > max) max = params[i];
+            //Actualitzem el mínim si cal
             if (params[i] < min) min = params[i];
-
-            //sumem el valor de la casella actual
-
-            suma = params[i];
+            //Sumen el valor de la casella actual
+            suma += params[i];
         }
 
-        return new int[]{0, params.length, 0, 0};
+        return new int[]{suma, params.length, max, min};
     }
 
     public static void main(String[] args) {
+
         tractaParametres();
 
         tractaParametres(null);
@@ -93,23 +95,65 @@ class exe17 {
         tractaParametres(new int[]{});
     }
 
-    class Exe18 {
+}
 
-        public static float[] ompleVectorFloats(float... params) {
-            if (params != null || params.length == 0) return null;
-        }
+class Exercici18 {
 
-        public static void main (String[]params){
-            ompleVectorFloats();
-        }
+    public static float[] ompleVectorFloats(float... params) {
+        if (params == null || params.length == 0) return null;
+//        float[] resultat=new float[params.length];
+//        for (int i = 0; i < params.length; i++) {
+//            resultat[i]=params[i];
+//        }
+//
+//        return resultat;
+        return params;
     }
 }
 
 
+class Exe20 {
+    public class StringReplacer {
 
+        public static String reemplassaMultiplesCaracters(String input, char primerCaracter, char segonCaracter, char... caracters) {
+            // Tractament de casos especials
+            if (input == null || input.isEmpty()) {
+                return input;
+            }
 
-class Exe20{
+            // Construir un conjunt de caràcters a reemplaçar
+            StringBuilder charsToReplace = new StringBuilder();
+            charsToReplace.append(segonCaracter);
+            if (caracters != null) {
+                for (char c : caracters) {
+                    charsToReplace.append(c);
+                }
+            }
 
+            // Construir el resultat reemplaçant els caràcters
+            StringBuilder result = new StringBuilder();
+            for (char c : input.toCharArray()) {
+                if (charsToReplace.indexOf(String.valueOf(c)) >= 0) {
+                    result.append(primerCaracter);
+                } else {
+                    result.append(c);
+                }
+            }
+
+            return result.toString();
+        }
+
+        public static void main(String[] args) {
+            // Exemple d'ús
+            String input = "Hola, món!";
+            char primerCaracter = '*';
+            char segonCaracter = 'o';
+            char[] caracters = {'a', 'm'};
+
+            String resultat = reemplassaMultiplesCaracters(input, primerCaracter, segonCaracter, caracters);
+            System.out.println(resultat); // H*l*, *ón!
+        }
+    }
 }
 
 

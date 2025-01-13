@@ -3,27 +3,35 @@ package com.iesebrepablo.library20242024.myfirstlibrary;
 import java.util.Random;
 
 public class Cadena {
-    /**
-     * Retorna un caracter aleatori
-     *
+
+    /*
+    Comentari multilínia
+    normal i corrent,
+    no pertany al Javadoc
      */
     public static char retornaCaracter() {
+        //Generem un caracter aleatori entre ' ' i '}'
         Random r = new Random();
-        return (char) (r.nextInt(94) + 32); // Generar un caràcter aleatori entre 32 i 125
+        return (char) (r.nextInt('}' - ' ' + 1) + ' ');
     }
 
+    /**
+     * Genera un caràcter aleatori entre un caracter mínim i un màxim
+     *
+     * @param caracterMinim el caracter aleatori generat més menut possible
+     * @param caracterMaxim el caracter aleatori generat més gran possible
+     * @return el caràcter generat aleatòriament entre un mínim i un màxim.
+     */
     public static char retornaCaracter(char caracterMinim, char caracterMaxim) {
-        /**
-         * Retorna dos caracters aleatoris amb un caracter mínim i màxim
-         */
+        //Primer comprovem si els paràmetres estan ordenats correctament, i sinó els intercanviem
         if (caracterMinim > caracterMaxim) {
             char temp = caracterMinim;
             caracterMinim = caracterMaxim;
             caracterMaxim = temp;
         }
+        //Generem un caracter aleatori entre ' ' i '}'
         Random r = new Random();
         return (char) (r.nextInt(caracterMaxim - caracterMinim + 1) + caracterMinim);
     }
-
 }
 

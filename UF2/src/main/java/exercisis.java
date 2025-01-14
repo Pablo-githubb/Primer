@@ -113,18 +113,6 @@ class Exercici18 {
 
 
 class Exercici20 {
-    /*
-    Programeu un mètode en Java anomenat reemplassaMultiplesCaracters que rebigue els següents paràmetres en l'ordre especificat:
-    un String,
-    un primer caràcter,
-    un segon caràcter,
-    un número variable de caràcters,
-    El mètode retornarà un String producte de reemplaçar de l'String qualsevol dels caràcters del paràmetre variable o
-    el segon caràcter, pel primer caràcter. Els casos especials a tractar seran:
-    si l'String és null o la cadena buida, el mètode retornarà el primer String,
-    Nota: aneu en compte ja que el número variable de caràcters pot ser null!!
-    */
-
     //Mètode que retorna una cadena formada pels caràcters que rep com a paràmetre i sense repetits
     public static String construixCadena(char buscat, char... buscats){
         String resultat=""+buscat;

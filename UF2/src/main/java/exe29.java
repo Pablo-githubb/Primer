@@ -1,17 +1,23 @@
 public class exe29 {
+
     public static int mcd(int a, int b){
-        //cas de parada
+        //Cas de parada
+        if(a==b) return a;
+        //Casos recursius
+        if(a<b) return mcd(a, b-a);
+        else return mcd(a-b, b);
+    }
+    public static int mcdNR(int a, int b){
 
-        if (a==b) return a;
-
-        //casos recursius
-
-        if(a<b) return mcd(a,b-a);
-        else return mcd(a-b,b);
+        while(a!=b){
+            if(a<b)  b=b-a;
+            else a=a-b;
+        }
+        return a;
     }
 
-
     public static void main(String[] args) {
-        System.out.println(mcd(140, 35));
+        System.out.println(mcd(1407676575,356767665));
+        System.out.println(mcdNR(140,35));
     }
 }

@@ -1,0 +1,2 @@
+public class exe40 {
+}

@@ -50,7 +50,7 @@ public class numeros {
      */
     public static int numVector(int[] digits) {
 
-        if (digits == null || digits.length==0) return 0;
+        if (digits == null || digits.length == 0) return 0;
 
         boolean negatiu = digits[0] < 0;
         if (negatiu) digits[0] *= -1; //si el número és negatiu ho paso a positiu
@@ -66,20 +66,63 @@ public class numeros {
             pot10 *= 10;
         }
 
-        return resultat*(negatiu?-1:1);
+        return resultat * (negatiu ? -1 : 1);
     }
 
-    public static double potenciaRec(double base, int exponent){
-
-
-
+    /**
+     * Programa que calcula de forma recursiva la potència d'un double base elevat a l'enter exponent.
+     *
+     * @param base     El número double demanat com base
+     * @param exponent El número enter demanat per a la potència
+     * @return Retorna el resultat de la potència sobre la base i l'exponent demanats
+     */
+    public static double potenciaRec(double base, int exponent) {
+        double resultat;
+        if (exponent > 0) {
+            resultat = base * Math.pow(base, exponent - 1);
+        } else if (exponent < 0) {
+            resultat = 1 / Math.pow(base, -exponent);
+        } else {
+            resultat = 1;
+        }
+        return resultat;
     }
 
+    /**
+     * Demanem un número enter per buscar el terme n-èssim d'aquest. Si el número (n) és <0, el mètode retornarà -1. Si el número és =0, retornarà 0. Si el número és =1, retornarà 1.
+     * Pero si el número és >1, retorarà la suma dels dos números anterios al número indicat.
+     *
+     * @param n el número fibonacci que volem comprovar.
+     * @return Retorna la suma dels dos números anteriors del número indicat.
+     */
+    public static int fibonacci(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+        else if (n == 1) return 1;
+        else return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static double nombreCombinatoriRec(double n, double m) {
+        double resultat = 0;
+
+        if (n > m) {
+            resultat = nombreCombinatoriRec(n - 1, m - 1) + nombreCombinatoriRec(n - 1, m);
+        } else if (n == m || m == 0) {
+            return 1;
+        } else {
+            return -1;
+        }
+        return resultat;
+    }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(vectorDigits(123)));
-        System.out.println(Arrays.toString(vectorDigits(-123)));
-        System.out.println(numVector(new int[]{1, 2, 3}));
-        System.out.println(numVector(new int[]{}));
+        //System.out.println(Arrays.toString(vectorDigits(123)));
+        //System.out.println(Arrays.toString(vectorDigits(-123)));
+        //System.out.println(numVector(new int[]{1, 2, 3}));
+        //System.out.println(numVector(new int[]{}));
+        //System.out.println(potenciaRec(5,2));
+        System.out.println(fibonacci(2));
+        System.out.println(nombreCombinatoriRec(3,4));
+
     }
 }

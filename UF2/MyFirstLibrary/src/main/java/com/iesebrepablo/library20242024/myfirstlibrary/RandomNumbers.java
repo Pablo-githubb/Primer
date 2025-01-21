@@ -3,6 +3,11 @@ package com.iesebrepablo.library20242024.myfirstlibrary;
 import java.util.Random;
 
 public class RandomNumbers {
+    /**
+     *
+     * @param bound
+     * @return
+     */
     public static int[] generateRandomNumbers(int bound){
         Random r=new Random();
         int[] valor=new int[3];
@@ -15,6 +20,12 @@ public class RandomNumbers {
         return valor;
     }
 
+    /**
+     *
+     * @param bound
+     * @param quantitat
+     * @return
+     */
     public static int[] generateRandomNumbers(int bound, int quantitat) {
 
         if(quantitat<0 || bound<0) return null;

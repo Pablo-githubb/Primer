@@ -7,6 +7,13 @@ public class dataCorrecta {
         System.out.println(dataCorrecta(2, 2, 1990) ? "Data Correcta!!" : "Data Incorrecta!!");
     }
 
+    /**
+     *
+     * @param dia
+     * @param mes
+     * @param any
+     * @return
+     */
     public static boolean dataCorrecta(int dia, int mes, int any) {
         int[] mesos = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 

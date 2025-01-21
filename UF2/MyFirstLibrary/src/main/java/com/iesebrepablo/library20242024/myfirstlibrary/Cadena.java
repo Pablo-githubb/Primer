@@ -9,6 +9,11 @@ public class Cadena {
     normal i corrent,
     no pertany al Javadoc
      */
+
+    /**
+     *
+     * @return
+     */
     public static char retornaCaracter() {
         //Generem un caracter aleatori entre ' ' i '}'
         Random r = new Random();

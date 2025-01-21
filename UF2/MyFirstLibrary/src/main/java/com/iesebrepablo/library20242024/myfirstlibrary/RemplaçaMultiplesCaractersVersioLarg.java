@@ -1,6 +1,14 @@
 package com.iesebrepablo.library20242024.myfirstlibrary;
 
 public class RemplaçaMultiplesCaractersVersioLarg {
+    /**
+     *
+     * @param text
+     * @param subst
+     * @param buscat
+     * @param buscats
+     * @return
+     */
     public static String reemplassaMultiplesCaractersVersioLlarga(String text, char subst, char buscat, char... buscats){
         //Tractem casos especials --> tractar sempre la condició null primer!!
         if(text==null || text.isEmpty()) return text;

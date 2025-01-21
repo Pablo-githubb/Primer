@@ -20,7 +20,15 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.8.1</version>
             <scope>test</scope>
+
+
         </dependency>
+        <dependency>
+            <groupId>com.iesebrepablo.library20242024.myfirstlibrary</groupId>
+            <artifactId>MyFirstLibrary</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

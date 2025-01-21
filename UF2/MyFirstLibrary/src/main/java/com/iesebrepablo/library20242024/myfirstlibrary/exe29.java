@@ -1,6 +1,12 @@
 package com.iesebrepablo.library20242024.myfirstlibrary;
 
 public class exe29 {
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static int mcd(int a, int b){
         //cas de parada
 

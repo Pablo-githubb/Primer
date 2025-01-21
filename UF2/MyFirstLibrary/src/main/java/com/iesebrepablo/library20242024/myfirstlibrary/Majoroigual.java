@@ -3,6 +3,12 @@ package com.iesebrepablo.library20242024.myfirstlibrary;
 import java.util.Scanner;
 
 public class Majoroigual {
+    /**
+     *
+     * @param instruccions
+     * @param informacioSiIncorrecte
+     * @return
+     */
     public static int obtenirEnterMajorOigual(String instruccions, String informacioSiIncorrecte) {
         Scanner ent = new Scanner(System.in);
         int num;

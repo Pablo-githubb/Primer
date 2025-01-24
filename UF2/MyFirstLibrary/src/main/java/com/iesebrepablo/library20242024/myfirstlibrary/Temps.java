@@ -1,21 +1,22 @@
-package com.iesebrepablo.library20242024.myfirstlibrary;
+import static com.iesebre.library20242025.Data.esBixest;
 
-/**
- * Classe que representa una data i hora.
- */
 public class Temps {
+
+    //Propietats
     private int dia = 1;
     private int mes = 1;
     private int any;
     private int hora;
     private int minut;
     private int segon;
+    //Indiquem si volem treballar en data i hora (true), o només en data (false)
     private boolean dataHora = true;
 
-    // Constructors
+    //Mètodes constructors
     public Temps() {
     }
 
+    //Per poder establir si volem data i hora o només data al moment de crear un objecte
     public Temps(boolean dataHora) {
         this.dataHora = dataHora;
     }
@@ -26,26 +27,29 @@ public class Temps {
     }
 
     public Temps(int dia, int mes, int any) {
-        this.dia = dia;
-        this.mes = mes;
-        this.any = any;
-        this.dataHora = false;
+        dataHora = false;
+        if(Data.dataCorrecta(dia,mes,any)) {
+            this.setDia(dia);
+            this.setMes(mes);
+            this.any = any;
+        }
     }
 
     public Temps(int dia, int mes, int any, int hora, int minut, int segon) {
         this(dia, mes, any);
+        dataHora = true;
         this.setHora(hora);
         this.setMinut(minut);
         this.setSegon(segon);
     }
 
-    // Getters i Setters
+    //Getters i setters
     public int getDia() {
         return dia;
     }
 
     public boolean setDia(int dia) {
-        if (dia >= 1 && dia <= 31 && this.dia != dia) {
+        if (dia >= 1 && dia <= 31) {
             this.dia = dia;
             return true;
         }
@@ -57,7 +61,7 @@ public class Temps {
     }
 
     public boolean setMes(int mes) {
-        if (mes >= 1 && mes <= 12 && this.mes != mes) {
+        if (mes >= 1 && mes <= 12) {
             this.mes = mes;
             return true;
         }
@@ -77,7 +81,7 @@ public class Temps {
     }
 
     public boolean setHora(int hora) {
-        if (hora >= 0 && hora <= 23 && this.hora != hora) {
+        if (hora >= 0 && hora <= 23) {
             this.hora = hora;
             return true;
         }
@@ -89,7 +93,7 @@ public class Temps {
     }
 
     public boolean setMinut(int minut) {
-        if (minut >= 0 && minut <= 59 && this.minut != minut) {
+        if (minut >= 0 && minut <= 59) {
             this.minut = minut;
             return true;
         }
@@ -101,7 +105,7 @@ public class Temps {
     }
 
     public boolean setSegon(int segon) {
-        if (segon >= 0 && segon <= 59 && this.segon != segon) {
+        if (segon >= 0 && segon <= 59) {
             this.segon = segon;
             return true;
         }
@@ -112,171 +116,145 @@ public class Temps {
         return dataHora;
     }
 
-    public void setDataHora(boolean dataHora) {
+    //El fem private per no poder canviar la propietat una vegada hem creat l'objecte
+    private void setDataHora(boolean dataHora) {
         this.dataHora = dataHora;
     }
 
-    /**
-     * Mostra la data i hora com a text.
-     *
-     * @return la data i hora com a text.
-     */
-    public String mostrarText() {
-        if (dataHora) {
-            return String.format("%d/%d/%4d %2d-%2d-%2d", dia, mes, any, hora, minut, segon);
-        } else return String.format("%d/%d/%4d", dia, mes, any);
+    //Mètodes normals
+    public String mostrar() {
+        if (dataHora)
+            return String.format("%02d/%02d/%04d %02d-%02d-%02d", dia, mes, any, hora, minut, segon);
+        else
+            return String.format("%02d/%02d/%04d", dia, mes, any);
     }
 
-    /**
-     * Mostra l'hora com a text si l'objecte té informació d'hora.
-     *
-     * @param mostraHora si s'ha de mostrar l'hora.
-     * @return l'hora com a text.
-     */
-    public String mostrarText(boolean mostraHora) {
-        if (dataHora) return String.format("%2d-%2d-%2d", hora, minut, segon);
+    public String mostrar(boolean mostrarHora) {
+        if (mostrarHora) return String.format("%02d-%02d-%02d", hora, minut, segon);
         return "";
     }
 
-    /**
-     * Modifica la data.
-     *
-     * @param dia el dia a establir.
-     * @param mes el mes a establir.
-     * @param any l'any a establir.
-     * @return true si la data s'ha modificat correctament, false en cas contrari.
-     */
-    public boolean modifica(int dia, int mes, int any) {
+    public boolean modificar(int dia, int mes, int any){
         this.setAny(any);
         return this.setDia(dia) && this.setMes(mes);
     }
 
-    /**
-     * Modifica la data i l'hora.
-     *
-     * @param dia   el dia a establir.
-     * @param mes   el mes a establir.
-     * @param any   l'any a establir.
-     * @param hora  l'hora a establir.
-     * @param minut el minut a establir.
-     * @param segon el segon a establir.
-     * @return true si la data i l'hora s'han modificat correctament, false en cas contrari.
-     */
-    public boolean modificaText(int dia, int mes, int any, int hora, int minut, int segon) {
-        boolean resultat = this.modifica(dia, mes, any); // canviem la data
-        if (!this.dataHora) return resultat; // si l'objecte només té data acabem
-        else return resultat && this.setHora(hora) && this.setMinut(minut) && this.setSegon(segon);
+    public boolean modificar(int dia, int mes, int any, int hora, int minut, int segon){
+        boolean resultat=this.modificar(dia, mes, any); //Canviem la data
+        if(!this.dataHora) return resultat;             //Si l'objecte només té data acabem
+        return resultat && this.setHora(hora) && this.setMinut(minut) && this.setSegon(segon);
     }
 
     /**
-     * Comprova si una data és correcta.
-     *
-     * @param dia el dia a comprovar.
-     * @param mes el mes a comprovar.
-     * @param any l'any a comprovar.
-     * @return true si la data és correcta, false en cas contrari.
+     * Indica si la data de l'objecte és o no correcta
+     * @return true si la data és correcta i false en cas contrari
      */
-    public static boolean dataCorrecta(int dia, int mes, int any) {
-        int[] mesos = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        if (esBixest(any)) mesos[1] = 29;
-        if (mes < 1 || mes > 12) return false;
-        return dia >= 1 && dia <= mesos[mes - 1];
+    public boolean dataCorrecta(){
+        //Vector que conté la durada dels 12 mesos d'un any
+        int[] mesos={31,28,31,30,31,30,31,31,30,31,30,31};
+
+
+        //Mirem si l'any és bixest per modificar la durada del febrer
+        if(esBixest(any)) mesos[1]=29;
+
+        //Mirem si el més correcte
+        if(mes<1 || mes>12) return false;
+
+        //Mirem si el dia és correcte
+        return dia>=1 && dia<=mesos[mes-1];
     }
 
     /**
-     * Comprova si un any és bixest.
-     *
-     * @param any l'any a comprovar.
-     * @return true si l'any és bixest, false en cas contrari.
+     * Obtenim la data de demà
+     * @return Un nou objecte contenint el dia, mes i any de demà si la data rebuda és correcta, sinó retornem null
      */
-    public static boolean esBixest(int any) {
-        return any >= 1582 && (any % 4 == 0 && any % 100 != 0 || any % 400 == 0);
-    }
+    public Temps diaSeguent(){
+        if(!dataCorrecta()) return null; //Si la data rebuda és incorrecta no cal fer res
 
-    /**
-     * Retorna el dia següent a una data donada.
-     *
-     * @param dia el dia de la data.
-     * @param mes el mes de la data.
-     * @param any l'any de la data.
-     * @return un array d'enters amb el dia, mes i any del dia següent.
-     */
-    public static int[] diaSeguent(int dia, int mes, int any) {
-        if (!dataCorrecta(dia, mes, any)) return null;
-        if (dataCorrecta(dia + 1, mes, any)) return new int[]{dia + 1, mes, any};
-        if (dataCorrecta(1, mes + 1, any)) return new int[]{1, mes + 1, any};
-        return new int[]{1, 1, any + 1};
-    }
+        //Copiem el dia, mes i any de l'objecte a un nou objecte, i així no modificarem el valor de les propietats del this
+        Temps dema=new Temps(dia, mes, any);
 
-    /**
-     * Compara dues dates.
-     *
-     * @param dia1 el dia de la primera data.
-     * @param mes1 el mes de la primera data.
-     * @param any1 l'any de la primera data.
-     * @param dia2 el dia de la segona data.
-     * @param mes2 el mes de la segona data.
-     * @param any2 l'any de la segona data.
-     * @return 1 si la primera data és major que la segona, 0 si són iguals, -1 si és menor, i -2 si alguna data és incorrecta.
-     */
-    public static int comparaDates(int dia1, int mes1, int any1, int dia2, int mes2, int any2) {
-        if (!dataCorrecta(dia1, mes1, any1) || !dataCorrecta(dia2, mes2, any2)) return -2;
-        if (any1 > any2) return 1;
-        else if (any1 < any2) return -1;
-        if (mes1 > mes2) return 1;
-        else if (mes1 < mes2) return -1;
-        if (dia1 > dia2) return 1;
-        else if (dia1 < dia2) return -1;
-        return 0;
-    }
-
-    /**
-     * Retorna el nombre de dies entre dues dates.
-     *
-     * @param dia1 el dia de la primera data.
-     * @param mes1 el mes de la primera data.
-     * @param any1 l'any de la primera data.
-     * @param dia2 el dia de la segona data.
-     * @param mes2 el mes de la segona data.
-     * @param any2 l'any de la segona data.
-     * @return el nombre de dies entre les dues dates, o -1 si alguna data és incorrecta.
-     */
-    public static int diferenciaDies(int dia1, int mes1, int any1, int dia2, int mes2, int any2) {
-        if (!dataCorrecta(dia1, mes1, any1) || !dataCorrecta(dia2, mes2, any2)) return -1;
-        switch (comparaDates(dia1, mes1, any1, dia2, mes2, any2)) {
-            case 0:
-                return 0;
-            case 1:
-                int temp = dia1;
-                dia1 = dia2;
-                dia2 = temp;
-                temp = mes1;
-                mes1 = mes2;
-                mes2 = temp;
-                temp = any1;
-                any1 = any2;
-                any2 = temp;
+        //Incremento un dia a la data actual
+        dema.dia++;
+        if(dema.dataCorrecta()){
+            return dema;
         }
-        int compt = 0;
-        while (comparaDates(dia1, mes1, any1, dia2, mes2, any2) != 0) {
-            int[] dema = diaSeguent(dia1, mes1, any1);
-            dia1 = dema[0];
-            mes1 = dema[1];
-            any1 = dema[2];
-            compt++;
-        }
-        return compt;
+
+        //Provem si s'arregla passant al primer dia del mes següent
+        dema.dia=1;
+        dema.mes++;
+        if(dema.dataCorrecta()) return dema;
+
+        //Estem a l'ultim dia de l'any, per tany de mà serà 1 de gener de l'any que ve
+        dema.mes=1;
+        dema.any++;
+        return dema;
     }
 
+    /**
+     * Diu si les dates que rep són diferents o iguals
+     * @param data2 un objecte que conté el dia, mes i any de la segona data
+     * @return 1 si la data de l'objecte actual és major que la segona, 0 si són iguals, -1 si és menor, i -2 si alguna data és
+     * incorrecta (incloent nuls)
+     */
+    public int comparaDates(Temps data2){
+        //Primer tractem els casos on l'objecte o el paràmetre donen problemes
+        if(!this.dataCorrecta() || data2==null || !data2.dataCorrecta()) return -2;
+
+        return Data.comparaDates(this.dia, this.mes, this.any, data2.dia, data2.mes, data2.any);
+    }
+
+    /**
+     * Diu quants dies hi ha entre 2 dates
+     * @param data2 un objecte número que representa la segona data
+     * @return El número de dies entre la data de l'objecte actual i la segona data si estes són correctes, i -1 si hi ha alguna data incorrecta
+     */
+    public int diferenciaDies(Temps data2) {
+        //Tracto els casos problemàtics
+        if(data2==null) return -1;
+
+        //Retornem el número de dies entre ambdues dates
+        return Data.diferenciaDies(this.dia, this.mes, this.any, data2.dia, data2.mes, data2.any);
+    }
 
 }
 
-// Aqui s'executarà els mètodes
 class Proves {
+
     public static void main(String[] args) {
-        Temps avui = new Temps(12, 12, 1992);
-        System.out.println(avui.mostrarText());
-        Temps t1 = new Temps(false);
-        Temps t2 = new Temps(1, 2, 6, 2, 5, 8);
+        Temps avui = new Temps(24, 1, 2025);
+        System.out.println(avui.mostrar());
+
+        Temps t1 = new Temps(true);
+        if(t1.modificar(12,12,1212, 0,100,0))
+            System.out.println(t1.mostrar());
+        else System.out.println("No s'ha pogut modificar la data.");
+
+
+        Temps t2 = new Temps(1, 1, 2025, 0, 0, 1);
+        System.out.println(t2.mostrar());
+        System.out.println(t2.mostrar(true));
+
+        Temps dema=avui.diaSeguent();
+        System.out.println(dema.dataCorrecta()?"Data correcta!!":"Ho sento, la data és incorrecta");
+        System.out.println(dema.mostrar());
+
+        System.out.println(avui.comparaDates(dema)); //-1
+        System.out.println(dema.comparaDates(avui)); //1
+        System.out.println(dema.comparaDates(dema)); //0
+        System.out.println(avui.comparaDates(null)); //-2
+
+        System.out.println(avui.diferenciaDies(dema)); //1
+        System.out.println(avui.diferenciaDies(avui)); //0
+        System.out.println(dema.diferenciaDies(avui)); //1
+        System.out.println(avui.diferenciaDies(null)); //-1
+
+        int diesfaltenPerFinalitzarCurs=avui.diferenciaDies(new Temps(27,5,2025));
+        for (int i = 0; i < diesfaltenPerFinalitzarCurs; i++) {
+            avui=avui.diaSeguent();
+        }
+
+        System.out.format("D'aquí %d dies serà %s%n",diesfaltenPerFinalitzarCurs, avui.mostrar());
     }
+
 }

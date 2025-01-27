@@ -1,4 +1,8 @@
-import static com.iesebre.library20242025.Data.esBixest;
+package com.iesebrepablo.library20242024.myfirstlibrary;
+
+import com.iesebrepablo.library20242024.myfirstlibrary.Data;
+
+import static com.iesebrepablo.library20242024.myfirstlibrary.Data.esBixest;
 
 public class Temps {
 

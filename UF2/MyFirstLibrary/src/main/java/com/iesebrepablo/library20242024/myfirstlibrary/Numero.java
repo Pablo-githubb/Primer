@@ -1,9 +1,8 @@
 package com.iesebrepablo.library20242024.myfirstlibrary;
 
-import java.util.Arrays;
 import java.util.Random;
 
-public class numeros {
+public class Numero {
     public static int generaNumeroAleatori() {
         Random r = new Random();
         return r.nextInt();
@@ -73,17 +72,17 @@ public class numeros {
      * Programa que calcula de forma recursiva la potència d'un double base elevat a l'enter exponent.
      *
      * @param base     El número double demanat com base
-     * @param exponent El número enter demanat per a la potència
+     * @param n El número enter demanat per a la potència
      * @return Retorna el resultat de la potència sobre la base i l'exponent demanats
      */
-    public static double potenciaRec(double base, int exponent) {
+    public static double potenciaRec(double base, int n) {
         double resultat;
-        if (exponent > 0) {
-            resultat = base * Math.pow(base, exponent - 1);
-        } else if (exponent < 0) {
-            resultat = 1 / Math.pow(base, -exponent);
+        if (n > 0) {
+            resultat = base * Math.pow(base, n - 1);
+        } else if (n < 0) {
+            resultat = 1.0 / Math.pow(base, -n);
         } else {
-            resultat = 1;
+            resultat = 1.0;
         }
         return resultat;
     }
@@ -97,8 +96,7 @@ public class numeros {
      */
     public static int fibonacci(int n) {
         if (n < 0) return -1;
-        else if (n == 0) return 0;
-        else if (n == 1) return 1;
+        else if (n == 0 || n==1) return n;
         else return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
@@ -116,12 +114,12 @@ public class numeros {
     }
 
     public static void main(String[] args) {
-        //System.out.println(Arrays.toString(vectorDigits(123)));
-        //System.out.println(Arrays.toString(vectorDigits(-123)));
-        //System.out.println(numVector(new int[]{1, 2, 3}));
-        //System.out.println(numVector(new int[]{}));
-        //System.out.println(potenciaRec(5,2));
-        System.out.println(fibonacci(2));
+        for (int i = 0; i < 100; i++) {
+            System.out.format("Terme %d-èssim: %d\n", i, fibonacci(i));
+            System.out.println("-------------------------");
+            System.out.println("Número d'or ----> "+(double)fibonacci(i)/fibonacci(-1));
+        }
+        System.out.println(potenciaRec(5,2));
         System.out.println(nombreCombinatoriRec(3,4));
 
     }

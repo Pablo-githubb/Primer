@@ -38,5 +38,25 @@ public class Cadena {
         Random r = new Random();
         return (char) (r.nextInt(caracterMaxim - caracterMinim + 1) + caracterMinim);
     }
+
+    /**
+     * Programa que retorna una subcadena
+     * @param text text que insermim
+     * @param subcadena text que volem inserir després del text
+     * @param pos posició a partir de la qual volem insertar
+     * @return si el text i la cadena són null, retornará null. D'altra banda, si algun dels Strings és null, retornarà l'altre que no es null. Finalment afegirà la subcadena en el text en la posició que nosaltres marquem
+     */
+    public static String insertaCadena (String text, String subcadena, int pos){
+        //casos especials
+        if (text== null && subcadena==null) return null;
+        if (text==null) return subcadena;
+        if (subcadena==null) return text;
+        if (pos<0) pos=0;
+        if (pos>text.length()) pos=text.length();
+
+        //casos reals
+
+        return text.substring(0,pos)+subcadena+text.substring(pos);
+    }
 }
 

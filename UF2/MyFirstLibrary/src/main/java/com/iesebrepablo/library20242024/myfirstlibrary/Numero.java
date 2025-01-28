@@ -100,17 +100,13 @@ public class Numero {
         else return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    public static double nombreCombinatoriRec(double n, double m) {
-        double resultat = 0;
+    public static int nombreCombinatoriRec(int n, int m){
+        if(n < m) return -1;
+        //Casos  de parada
+        if(n == m || m==0) return 1;
 
-        if (n > m) {
-            resultat = nombreCombinatoriRec(n - 1, m - 1) + nombreCombinatoriRec(n - 1, m);
-        } else if (n == m || m == 0) {
-            return 1;
-        } else {
-            return -1;
-        }
-        return resultat;
+        //Cas recursiu
+        return nombreCombinatoriRec(n - 1, m -1) + nombreCombinatoriRec(n-1, m);
     }
 
     public static void main(String[] args) {

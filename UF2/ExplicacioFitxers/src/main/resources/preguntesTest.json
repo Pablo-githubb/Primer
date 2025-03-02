@@ -1,0 +1,124 @@
+{
+  "categoria": [
+    {
+      "pregunta": "Quina corrent artística va crear Pablo Picasso?",
+      "correcta": "Cubisme",
+      "opcions": [
+        "Impressionisme",
+        "Cubisme",
+        "Surrealisme"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin país va guanyar el mundial de futbol de 1998?",
+      "correcta": "França",
+      "opcions": [
+        "Brasil",
+        "Alemanya",
+        "França"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "En quin país es troba el muntanya 'Kilimanjaro'?",
+      "correcta": "Tanzània",
+      "opcions": [
+        "Kènia",
+        "Tanzània",
+        "Etiòpia"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quina és la molècula portadora de l'energia en les cèl·lules?",
+      "correcta": "ATP",
+      "opcions": [
+        "ATP",
+        "ADN",
+        "ARN"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin és el país més poblat d'Àfrica?",
+      "correcta": "Nigèria",
+      "opcions": [
+        "Sud-àfrica",
+        "Egipte",
+        "Nigèria"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin químic va ser el creador de la taula paròdica?",
+      "correcta": "Dmitri Mendeléiev",
+      "opcions": [
+        "John Dalton",
+        "Dmitri Mendeléiev",
+        "Antoine Lavoisier"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin filòsof va escriure 'La República'?",
+      "correcta": "Plató",
+      "opcions": [
+        "Plató",
+        "Sòcrates",
+        "Aristòtils"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "En quin país va néixer Adolf Hitler?",
+      "correcta": "Àustria",
+      "opcions": [
+        "Alemanya",
+        "Àustria",
+        "Hongria"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin mar connecta Europa amb Àfrica?",
+      "correcta": "Mar Mediterrani",
+      "opcions": [
+        "Mar bàltic",
+        "Mar del nord",
+        "Mar Mediterrani"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin és el continent més petit?",
+      "correcta": "Oceania",
+      "opcions": [
+        "Oceania",
+        "Amèrica del sud",
+        "Europa"
+      ],
+      "punts": 10
+    },
+    {
+      "pregunta": "Quin tipus d'energia es genera a partir de la calor de la terra?",
+      "correcta": "Geotèrmica",
+      "opcions": [
+        "Geotèrmica",
+        "Solar",
+        "Eòlica"
+      ],
+      "punts": 15
+    },
+    {
+      "pregunta": "Quin matemàtic és conegut com 'El pare del càlcul?",
+      "correcta": "Gottfried Wilhelm Leibniz",
+      "opcions": [
+        "Euclides",
+        "Gottfried Wilhelm Leibniz",
+        "René Descartes"
+      ],
+      "punts": 15
+    }
+  ]
+}

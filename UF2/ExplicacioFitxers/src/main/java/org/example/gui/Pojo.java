@@ -1,15 +1,16 @@
 package org.example.gui;
 
-import java.awt.print.PrinterJob;
 import java.io.Serializable;
 
 public class Pojo implements Serializable {
+
     private String nom;
     private String cognoms;
 
-    public Pojo(){}
+    public Pojo() {
+    }
 
-    public Pojo(String nom, String cognoms){
+    public Pojo(String nom, String cognoms) {
         this.nom = nom;
         this.cognoms = cognoms;
     }
@@ -23,6 +24,7 @@ public class Pojo implements Serializable {
     }
 
     public String getCognoms() {
+        int i = 0;
         return cognoms;
     }
 
@@ -32,8 +34,9 @@ public class Pojo implements Serializable {
 
     @Override
     public String toString() {
-        return null;
+        return "Pojo{" +
+                "nom='" + nom + '\'' +
+                ", cognoms='" + cognoms + '\'' +
+                '}';
     }
 }
-
-

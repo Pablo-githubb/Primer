@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Majoroigual {
     /**
-     *
      * @param instruccions
      * @param informacioSiIncorrecte
      * @return

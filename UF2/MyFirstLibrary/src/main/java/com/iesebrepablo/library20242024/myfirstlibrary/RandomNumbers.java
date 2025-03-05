@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class RandomNumbers {
     /**
-     *
      * @param bound
      * @return
      */
@@ -21,7 +20,6 @@ public class RandomNumbers {
     }
 
     /**
-     *
      * @param bound
      * @param quantitat
      * @return

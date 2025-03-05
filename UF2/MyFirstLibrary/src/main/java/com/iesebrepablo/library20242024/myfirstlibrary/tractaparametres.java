@@ -1,5 +1,4 @@
 package com.iesebrepablo.library20242024.myfirstlibrary;
-
 public class tractaparametres {
     public static int[] tractaParametres(int... params) {
         //Tractament de casos "especials"
@@ -22,6 +21,14 @@ public class tractaparametres {
 
         return new int[]{suma, params.length, max, min};
     }
+
+    /**
+     * @param text comprovem si el text es null o no i retornem aquest
+     * @param subst
+     * @param buscat
+     * @param buscats
+     * @return retorna una cadena formada pels caràcters que rep com a paràmetre i sense repetits
+     */
     public static String reemplassaMultiplesCaracters(String text, char subst, char buscat, char... buscats){
         //Tractem casos especials --> tractar sempre la condició null primer!!
         if(text==null || text.isEmpty()) return text;
@@ -36,6 +43,12 @@ public class tractaparametres {
         return resultat;
     }
     //Mètode que retorna una cadena formada pels caràcters que rep com a paràmetre i sense repetits
+
+    /**
+     * @param buscat
+     * @param buscats
+     * @return
+     */
     public static String construixCadena(char buscat, char... buscats){
         String resultat=""+buscat;
         if(buscats!=null){

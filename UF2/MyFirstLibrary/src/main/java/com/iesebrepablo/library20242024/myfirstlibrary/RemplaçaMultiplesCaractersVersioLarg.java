@@ -2,7 +2,6 @@ package com.iesebrepablo.library20242024.myfirstlibrary;
 
 public class RemplaçaMultiplesCaractersVersioLarg {
     /**
-     *
      * @param text
      * @param subst
      * @param buscat

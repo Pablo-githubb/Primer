@@ -18,7 +18,6 @@ public class Numero {
 
     /**
      * Un programa que rep un paràmetre enter i retorna els digits d'aquest numero en un vector
-     *
      * @param num el número que demana per retornar els seus dígits
      * @return el vector amb els paràmetres separats del número
      */
@@ -70,7 +69,6 @@ public class Numero {
 
     /**
      * Programa que calcula de forma recursiva la potència d'un double base elevat a l'enter exponent.
-     *
      * @param base     El número double demanat com base
      * @param n El número enter demanat per a la potència
      * @return Retorna el resultat de la potència sobre la base i l'exponent demanats
@@ -90,7 +88,6 @@ public class Numero {
     /**
      * Demanem un número enter per buscar el terme n-èssim d'aquest. Si el número (n) és <0, el mètode retornarà -1. Si el número és =0, retornarà 0. Si el número és =1, retornarà 1.
      * Pero si el número és >1, retorarà la suma dels dos números anterios al número indicat.
-     *
      * @param n el número fibonacci que volem comprovar.
      * @return Retorna la suma dels dos números anteriors del número indicat.
      */

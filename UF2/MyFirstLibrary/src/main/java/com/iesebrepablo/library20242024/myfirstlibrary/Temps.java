@@ -151,7 +151,6 @@ public class Temps {
 
     /**
      * Indica si la data de l'objecte és o no correcta
-     *
      * @return true si la data és correcta i false en cas contrari
      */
     public boolean dataCorrecta() {
@@ -166,7 +165,6 @@ public class Temps {
 
     /**
      * Obtenim la data de demà
-     *
      * @return Un nou objecte contenint el dia, mes i any de demà si la data rebuda és correcta, sinó retornem null
      */
     public Temps diaSeguent() {
@@ -194,7 +192,6 @@ public class Temps {
 
     /**
      * Diu si les dates que rep són diferents o iguals
-     *
      * @param data2 un objecte que conté el dia, mes i any de la segona data
      * @return 1 si la data de l'objecte actual és major que la segona, 0 si són iguals, -1 si és menor, i -2 si alguna data és
      * incorrecta (incloent nuls)
@@ -208,7 +205,6 @@ public class Temps {
 
     /**
      * Diu quants dies hi ha entre 2 dates
-     *
      * @param data2 un objecte número que representa la segona data
      * @return El número de dies entre la data de l'objecte actual i la segona data si estes són correctes, i -1 si hi ha alguna data incorrecta
      */

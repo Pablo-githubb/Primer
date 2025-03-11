@@ -12,21 +12,15 @@ public class Main {
         //Este si que pot perquè el mètode getNom és public
         System.out.println("Nom: " + objecte.getNom());
         System.out.println("DNI: " + objecte.dni);
-
-//        String frase = "yoyaestuveenestosjuegos";
-//        for (int i = 0; i < frase.length(); i++) {
-//            System.out.println(frase);
-//        }
-
     }
 }
 
 class Alumne {
     //Propietats
-    private String nom = "Josep";
+    private String nom = "Josep"; //private, solament es accessible des de la mateixa classe
     protected String dni; // Es veu sempre i quan estiguis al mateix paquet
-    String cicle="DAM"; //Package-private -> no se sol fer mai
-    public String curs = "1r";
+    String cicle="DAM"; //Package-private -> no se sol fer mai, es accessible si esta en la classe del mateix paquet
+    public String curs = "1r"; //public, es accessible a tothom
 
     //Mètodes
 

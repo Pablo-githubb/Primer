@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2adf032a-be35-43f8-abc4-e1c277164a0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/main/java/herencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/abstractes/Abstracta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/polimorfisme/SuperClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
@@ -16,8 +17,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/control/access/primer/Dades.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/access/primer/GestorDades.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/access/segon/DadesExternes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/outer/Tercera.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/outer/Tercera.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,16 +89,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.DadesExternes" />
@@ -126,6 +115,7 @@
       <workItem from="1741611448593" duration="1247000" />
       <workItem from="1741627100716" duration="3894000" />
       <workItem from="1741676693928" duration="730000" />
+      <workItem from="1742141525244" duration="10000" />
     </task>
     <servers />
   </component>

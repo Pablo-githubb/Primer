@@ -15,8 +15,8 @@ public abstract class Abstracta { //ficar abstract en el nom de la classe
 
 }
 
-/**
- * Las classes abstractes poden serveri com llibreries de classes, per exemple, si volem que totes les classes que
+/*
+ * Les classes abstractes poden serveri com llibreries de classes, per exemple, si volem que totes les classes que
  * heretin.
  * S'utilitzen molt per guardar en constants i mètodes que no es poden sobreesciure.
  */

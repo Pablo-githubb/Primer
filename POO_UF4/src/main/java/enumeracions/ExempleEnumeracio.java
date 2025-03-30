@@ -8,31 +8,20 @@ class Vehicle{
     private String nom = "Cotxe";
     private double cilindrada;
     //Davant, darrera, esquerra i dreta
-    private String direccio;
-
     private ExempleEnumeracio direction;
 
-    public String getDireccio() {
-        return direccio;
-    }
-
-    public void setDireccio(String direccio) {
-        this.direccio = direccio;
-    }
 
 
-    //    public void setDireccio(String direccio) {
-//        switch (direccio){
+//        public void setDireccio(String direction) {
+//        switch (direction){
 //            case  "davant":
 //            case "detras":
 //            case "esquerra":
 //            case "dreta":
-//                this.direccio = direccio;
 //                break;
 //
 //        }
-//
-//    }
+
 
     public ExempleEnumeracio getDirection() {
         return direction;
@@ -46,7 +35,6 @@ class Vehicle{
         return "Vehicle{" +
                 "nom='" + nom + '\'' +
                 ", cilindrada=" + cilindrada +
-                ", Direccio='" + direccio + '\'' +
                 ", direction=" + direction +
                 '}';
     }

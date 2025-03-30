@@ -21,8 +21,7 @@ public class Progenitor {
     }
 }
 
-class Filla extends Progenitor { //extends s'utilitza per heretar sobre quina classe volem
-
+class Filla extends Progenitor {//extends s'utilitza per heretar sobre quina classe volem
 }
 
 class Prova {
